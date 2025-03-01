@@ -1,0 +1,43 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { FaSpotify, FaYoutube, FaDiscord } from "react-icons/fa";
+
+const BOT_INVITE_LINK = "https://discord.com/oauth2/authorize?client_id=1142217589095940257&permissions=35653632&integration_type=0&scope=bot";
+
+export default function BotSlasher() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-6">
+      <Card className="max-w-3xl w-full bg-gray-800 shadow-xl rounded-2xl">
+        <CardContent className="p-6 text-center">
+          <h1 className="text-4xl font-bold text-blue-400">BOT SLASHER 🎵</h1>
+          <p className="text-gray-300 mt-3">
+            Um bot de música para Discord que toca músicas do YouTube e playlists do Spotify!
+          </p>
+          <div className="flex justify-center gap-4 mt-6">
+            <FaSpotify className="text-green-500 text-4xl" />
+            <FaYoutube className="text-red-500 text-4xl" />
+            <FaDiscord className="text-blue-500 text-4xl" />
+          </div>
+          <div className="mt-6 text-left">
+            <h2 className="text-xl font-semibold text-blue-300">Comandos:</h2>
+            <ul className="mt-2 space-y-2">
+              <li><strong>!join</strong> - Entra no canal de voz</li>
+              <li><strong>!play (música)</strong> - Toca uma música do YouTube</li>
+              <li><strong>!spotify (link da playlist)</strong> - Toca uma playlist do Spotify</li>
+              <li><strong>!queue_list</strong> - Mostra a fila de músicas</li>
+              <li><strong>!skip</strong> - Pula a música atual</li>
+              <li><strong>!pause</strong> - Pausa a música</li>
+              <li><strong>!resume</strong> - Retoma a música</li>
+              <li><strong>!stop</strong> - Para a música e limpa a fila</li>
+              <li><strong>!clear</strong> - Limpa a fila de músicas</li>
+            </ul>
+          </div>
+          <Button className="mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl text-lg">
+            <a href={BOT_INVITE_LINK} target="_blank" rel="noopener noreferrer">➕ Adicionar o Bot ao Discord</a>
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
